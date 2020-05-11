@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div style="text-align: center;">
+      <input type="text" [(ngModel)]="searchName"/>
+    </div>
+    <h2>Table</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | searchfilter:searchName">
+          <td>{{user.newsId}}</td>
+          <td>{{user.newsHeading}}</td>
+          <td>{{user.newsTitle}}</td>
+          <!-- <td>{{user.username}}</td> -->
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>
